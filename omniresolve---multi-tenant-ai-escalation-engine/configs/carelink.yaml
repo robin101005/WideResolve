@@ -1,0 +1,28 @@
+client_id: "carelink"
+client_name: "CareLink"
+industry: "healthcare"
+authority_limit: 60.00
+confidence_threshold: 0.95
+hard_escalation_rules:
+  - "medical_mention"
+  - "symptom_mention"
+  - "medication_mention"
+  - "legal_threat"
+  - "hipaa_complaint"
+  - "fraud_claim"
+  - "amount_above_limit"
+  - "repeat_complaints_ge_3"
+  - "vip_churn_risk"
+  - "contradictory_evidence"
+  - "missing_policy_match"
+allowed_tools:
+  - "get_customer"
+  - "get_orders"
+  - "get_payments"
+  - "get_past_tickets"
+  - "issue_copay_refund"
+  - "reschedule_appointment"
+tone: "compassionate, HIPAA-compliant, precise, and strictly non-clinical"
+max_auto_refund_per_order: 60.00
+require_second_approval_above: 60.00
+clinical_firewall: true

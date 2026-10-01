@@ -1,0 +1,23 @@
+client_id: "telenet"
+client_name: "TeleNet"
+industry: "telecom"
+authority_limit: 40.00
+confidence_threshold: 0.88
+hard_escalation_rules:
+  - "legal_threat"
+  - "regulatory_threat"
+  - "fraud_claim"
+  - "amount_above_limit"
+  - "repeat_complaints_ge_3"
+  - "vip_churn_risk"
+  - "contradictory_evidence"
+  - "missing_policy_match"
+allowed_tools:
+  - "get_customer"
+  - "get_orders"
+  - "get_payments"
+  - "get_past_tickets"
+  - "issue_service_credit"
+tone: "professional, accountable, concise, and reassuring"
+max_auto_refund_per_order: 40.00
+require_second_approval_above: 40.00

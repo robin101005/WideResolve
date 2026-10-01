@@ -1,0 +1,23 @@
+client_id: "quickcart"
+client_name: "QuickCart"
+industry: "e-commerce"
+authority_limit: 50.00
+confidence_threshold: 0.85
+hard_escalation_rules:
+  - "legal_threat"
+  - "fraud_claim"
+  - "amount_above_limit"
+  - "repeat_complaints_ge_3"
+  - "vip_churn_risk"
+  - "contradictory_evidence"
+  - "missing_policy_match"
+allowed_tools:
+  - "get_customer"
+  - "get_orders"
+  - "get_payments"
+  - "get_past_tickets"
+  - "issue_refund"
+  - "apply_courtesy_credit"
+tone: "empathetic, efficient, friendly, and brand-conscious"
+max_auto_refund_per_order: 50.00
+require_second_approval_above: 50.00

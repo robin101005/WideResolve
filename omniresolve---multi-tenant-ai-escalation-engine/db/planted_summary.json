@@ -1,0 +1,74 @@
+[
+  {
+    "scenario": "1. Double Charge",
+    "client": "quickcart",
+    "customer": "QC-CUST-103",
+    "order": "QC-ORD-8901",
+    "detail": "Customer charged twice ($42.50) within 2 minutes for order QC-ORD-8901.",
+    "expected": "AUTO_RESOLVE (Refund $42.50)"
+  },
+  {
+    "scenario": "2. Late Delivery",
+    "client": "quickcart",
+    "customer": "QC-CUST-104",
+    "order": "QC-ORD-8902",
+    "detail": "Express shipment delayed by 5 days past promised SLA delivery window.",
+    "expected": "AUTO_RESOLVE ($10 courtesy SLA credit)"
+  },
+  {
+    "scenario": "3. Outage Billing",
+    "client": "telenet",
+    "customer": "TN-CUST-102",
+    "order": "TN-ORD-8903",
+    "detail": "Customer billed full $89.99 monthly fee despite logged 48h system blackout.",
+    "expected": "RESOLVE_WITH_APPROVAL (Service credit of $35.00)"
+  },
+  {
+    "scenario": "4. Duplicate Medical Bill",
+    "client": "carelink",
+    "customer": "CL-CUST-104",
+    "order": "CL-ORD-8904",
+    "detail": "Patient charged $50.00 copay twice for single routine lab visit.",
+    "expected": "AUTO_RESOLVE (Refund duplicate $50.00)"
+  },
+  {
+    "scenario": "5. Fraud Claim",
+    "client": "quickcart",
+    "customer": "QC-CUST-105",
+    "order": "QC-ORD-8905",
+    "detail": "Customer claims card was stolen and unauthorized transaction placed.",
+    "expected": "ESCALATE (Hard rule: Fraud/Security claim)"
+  },
+  {
+    "scenario": "6. Repeat Complainer",
+    "client": "telenet",
+    "customer": "TN-CUST-110",
+    "order": "TN-ORD-8010",
+    "detail": "Customer has 3 prior logged disputes in 30 days and submits 4th complaint.",
+    "expected": "ESCALATE (Hard rule: 3rd repeat contact)"
+  },
+  {
+    "scenario": "7. Legal Threat",
+    "client": "carelink",
+    "customer": "CL-CUST-107",
+    "order": "CL-ORD-8907",
+    "detail": "Customer states 'My attorney will file a regulatory lawsuit against CareLink'.",
+    "expected": "ESCALATE (Hard rule: Legal/Regulatory threat)"
+  },
+  {
+    "scenario": "8. VIP Churn Risk",
+    "client": "telenet",
+    "customer": "TN-CUST-100",
+    "order": "TN-ORD-8908",
+    "detail": "VIP Tier enterprise account ($2,400 LTV) threatening immediate contract termination.",
+    "expected": "ESCALATE (Hard rule: VIP customer with churn risk)"
+  },
+  {
+    "scenario": "9. Delivered vs Not Received",
+    "client": "quickcart",
+    "customer": "QC-CUST-108",
+    "order": "QC-ORD-8909",
+    "detail": "Carrier marked 'Delivered to porch' but customer video evidence shows missing parcel.",
+    "expected": "RESOLVE_WITH_APPROVAL or ESCALATE (Contradictory evidence)"
+  }
+]

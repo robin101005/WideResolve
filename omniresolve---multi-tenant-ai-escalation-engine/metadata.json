@@ -1,0 +1,6 @@
+{
+  "name": "OmniResolve - Multi-Tenant AI Escalation Engine",
+  "description": "Enterprise multi-tenant customer escalation resolution platform with deterministic policy guards, hash-chained audit logging, and human-in-the-loop escalation gates.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
